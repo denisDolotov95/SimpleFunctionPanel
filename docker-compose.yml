@@ -1,0 +1,10 @@
+services:
+  web_function_panel:
+    container_name: web_function_panel
+    image: web_function_panel
+    build: .
+    restart: always
+    hostname: web_function_panel
+    ports:
+      - "8001:8000"
+    network_mode: bridge

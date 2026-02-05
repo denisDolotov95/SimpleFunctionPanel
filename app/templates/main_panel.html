@@ -1,0 +1,145 @@
+{% extends "page/template_page.html" %}
+{% block head %}
+    {{ super() }}
+{% endblock head %}
+{% block main_panel %}
+    <div class="row">
+        <div class="col-6 col-md-4", id="portainer">
+            <h3><a href="{{ portainer.url }}">Portainer</a></h3>
+            {% if portainer.status == 200 %}
+                <b>Status</b>({{ portainer.status }}) : <span class="glyphicon glyphicon-ok"
+               aria-hidden="true"
+               style="color: green"></span>
+            {% else %}
+                <b>Status</b>({{ portainer.status }}) : <span class="glyphicon glyphicon-remove"
+               aria-hidden="true"
+               style="color: red"></span>
+            {% endif %}
+                <br>
+                <b>Url</b>: {{ portainer.url }}
+                <br>
+                <b>Host</b>: {{ portainer.ip }}
+                <br>
+                <a href="{{ portainer.url }}/#!/2/docker/dashboard" target="_blank"><b>Dashboard</b></a> | 
+                <a href="{{ portainer.url }}/#!/2/docker/containers" target="_blank"><b>Containers</b></a> | 
+                <a href="{{ portainer.url }}/#!/2/docker/networks" target="_blank"><b>Networks</b></a> | 
+                <a href="{{ portainer.url }}/#!/2/docker/volumes" target="_blank"><b>Volumes</b></a> | 
+                <a href="{{ portainer.url }}/#!/2/docker/events" target="_blank"><b>Events</b></a> | 
+                <a href="{{ portainer.url }}/#!/2/docker/host" target="_blank"><b><b>Host</b></b></a> | 
+                <a href="{{ portainer.url }}/#!/2/docker/images" target="_blank"><b>Images</b></a> |
+            <hr>
+        </div>
+        <div class="col-6 col-md-4" id="grafana">
+            <h3><a href="{{ grafana.url }}">Grafana</a></h3>
+            {% if grafana.status == 200 %}
+                <b>Status</b>({{ grafana.status }}) : <span class="glyphicon glyphicon-ok"
+               aria-hidden="true"
+               style="color: green"></span>
+            {% else %}
+                <b>Status</b>({{ grafana.status }}) : <span class="glyphicon glyphicon-remove"
+               aria-hidden="true"
+               style="color: red"></span>
+            {% endif %}
+                <br>
+                <b>Url</b>: {{ grafana.url }}
+                <br>
+                <b>Host</b>: {{ grafana.ip }}
+                <br>
+                <a href="{{ grafana.url }}/d/rYdddlPWk/node-exporter-full" target="_blank"><b>Node Exporter Full</b></a> | 
+                <a href="{{ grafana.url }}/d/Kn5xm-gZk/rabbitmq-overview" target="_blank"><b>RabbitMQ-Overview</b></a> | 
+                <a href="{{ grafana.url }}/d/000000039/psql-main" target="_blank"><b>Main Postgresql</b></a> | 
+                <a href="{{ grafana.url }}/d/000000040/psql-replica" target="_blank"><b>Replica Postgresql</b></a> | 
+            <hr>
+        </div>
+        <div class="col-6 col-md-4", id="prometheus">
+            <h3><a href="{{ prometheus.url }}">Prometheus</a></h3>
+            {% if prometheus.status == 200 %}
+                <b>Status</b>({{ prometheus.status }}) : <span class="glyphicon glyphicon-ok"
+               aria-hidden="true"
+               style="color: green"></span>
+            {% else %}
+                <b>Status</b>({{ prometheus.status }}) : <span class="glyphicon glyphicon-remove"
+               aria-hidden="true"
+               style="color: red"></span>
+            {% endif %}
+                <br>
+                <b>Url</b>: {{ prometheus.url }}
+                <br>
+                <b>Host</b>: {{ prometheus.ip }}
+                <br>
+                <a href="{{ prometheus.url }}/targets" target="_blank"><b>Targets health</b></a> |
+            <hr>
+        </div>
+        <div class="col-6 col-md-4", id="rabbit_mq">
+            <h3><a href="{{ rabbit_mq.url }}">Rabbit MQ</a></h3>
+            {% if rabbit_mq.status == 200 %}
+                <b>Status</b>({{ rabbit_mq.status }}) : <span class="glyphicon glyphicon-ok"
+               aria-hidden="true"
+               style="color: green"></span>
+            {% else %}
+                <b>Status</b>({{ rabbit_mq.status }}) : <span class="glyphicon glyphicon-remove"
+               aria-hidden="true"
+               style="color: red"></span>
+            {% endif %}
+                <br>
+                <b>Url</b>: {{ rabbit_mq.url }}
+                <br>
+                <b>Host</b>: {{ rabbit_mq.ip }}
+            <hr>
+        </div>
+        <div class="col-6 col-md-4", id="postgresql">
+            <h3>Main Postgresql</h3>
+            {% if psql_main.status %}
+                <b>Status</b>({{ psql_main.status }}) : <span class="glyphicon glyphicon-ok"
+               aria-hidden="true"
+               style="color: green"></span>
+            {% else %}
+                <b>Status</b>({{ psql_main.status }}) : <span class="glyphicon glyphicon-remove"
+               aria-hidden="true"
+               style="color: red"></span>
+            {% endif %}
+                <br>
+                <b>Url</b>: {{ psql_main.url }}
+                <br>
+                <b>Host</b>: {{ psql_main.ip }}
+            <hr>
+        </div>
+        <div class="col-6 col-md-4", id="postgresql">
+            <h3>Replica Postgresql</h3>
+            {% if psql_replica.status %}
+                <b>Status</b>({{ psql_replica.status }}) : <span class="glyphicon glyphicon-ok"
+               aria-hidden="true"
+               style="color: green"></span>
+            {% else %}
+                <b>Status</b>({{ psql_replica.status }}) : <span class="glyphicon glyphicon-remove"
+               aria-hidden="true"
+               style="color: red"></span>
+            {% endif %}
+                <br>
+                <b>Url</b>: {{ psql_main.url }}
+                <br>
+                <b>Host</b>: {{ psql_replica.ip }}
+            <hr>
+        </div>
+        <div class="col-6 col-md-4", id="gate_api">
+            <h3><a href="{{ gate_api.url }}">Gate API (local)</a></h3>
+            {% if gate_api.status == 200 %}
+                <b>Status</b>({{ gate_api.status }}) : <span class="glyphicon glyphicon-ok"
+               aria-hidden="true"
+               style="color: green"></span>
+            {% else %}
+                <b>Status</b>({{ gate_api.status }}) : <span class="glyphicon glyphicon-remove"
+               aria-hidden="true"
+               style="color: red"></span>
+            {% endif %}
+                <br>
+                <b>Host</b>: {{ gate_api.url }}
+                <br>
+                <b>Host</b>: {{ gate_api.ip }}
+            <hr>
+        </div>
+    </div>
+{% endblock main_panel %}
+{% block foot %}
+    {{ super() }}
+{% endblock foot %}
