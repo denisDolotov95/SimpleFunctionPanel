@@ -11,3 +11,4 @@ Deployment on your docker host (Image must be in the registry: localhost:5000):
 If you have Gitlab CI/CD then there's a .gitlab-ci.yml file
 ***
 ![Main panel](MainPage.png)
+***
