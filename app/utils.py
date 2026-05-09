@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-import re
 import logging
+import re
+from typing import Any
+
+import aiohttp
+import asyncpg
 import redis.asyncio
 import redis.exceptions
-import asyncpg
 import urllib3
-import aiohttp
-
-from typing import Any
 from pydantic import BaseModel, Field
 from sqlalchemy.ext.asyncio import create_async_engine
 

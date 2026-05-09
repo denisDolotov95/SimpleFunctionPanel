@@ -2,9 +2,7 @@
 from fastapi import status
 from fastapi.responses import HTMLResponse, RedirectResponse
 
-from .. import utils
-
-from .. import app, jinja_env, app_config
+from .. import app, app_config, jinja_env, utils
 
 __all__ = ["main_panel"]
 
